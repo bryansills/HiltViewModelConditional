@@ -35,7 +35,17 @@ class MainActivity : ComponentActivity() {
                             }
                         )
                     }
-                    composable<CoolRoute> { CoolScreen() }
+//                    composable<CoolRoute> { CoolScreen() }
+                    approvableDestination<ParentCoolRoute, CoolRoute>(
+                        navController = navController,
+                        restoredRoute = CoolRoute("this string is ignored...")
+                    ) {
+                        CoolScreen()
+                    }
+
+//                    dialog<CoolRoute> {
+//                        CoolScreen()
+//                    }
                 }
             }
         }
